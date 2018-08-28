@@ -15,7 +15,6 @@ def getmac(interface):
 
 packet = \
 	Ether(src = getmac(argv[1]), dst = RandMAC()) \
-	/ Dot1Q(vlan=50)\
 	/ IP(src = RandIP() , dst = RandIP()) \
 	/ UDP(sport = 3423, dport = 5342) \
 	/ "UDP Random traffic generator"
