@@ -1,0 +1,9 @@
+snmp user monitor
+snmp community index 1 name public security monitor
+snmp group mg user monitor security-model v2c
+snmp access mg v2c read iso write iso notify iso
+snmp view iso 1 included
+snmp targetaddr ADDR param TRAPS 192.168.0.2 taglist TAG
+snmp targetparams TRAPS user monitor security-model v2c message-processing v2c
+snmp notify monitor tag TAG type Trap
+
