@@ -34,14 +34,14 @@ packet_tag       = ETH / OTAG / IP / UDP / PAYLOAD
 packet_doubletag = ETH / OTAG / ITAG / IP / UDP / PAYLOAD
 
 if args.otag is not None and args.itag is not None :
-	print "Send double tag"
+	print ("Send double tag")
 	sendp (packet_doubletag, iface = args.iface, loop = ifloop, verbose = ifverbose)
 	exit(0)
 elif args.otag is not None:
-	print "Send outer tag"
+	print ("Send outer tag")
 	sendp (packet_tag, iface = args.iface, loop = ifloop, verbose = ifverbose)
 	exit(0)
 else:
-	print "Send untag"
+	print ("Send untag")
 	sendp (packet_untag, iface = args.iface, loop = ifloop, verbose = ifverbose)
 	exit(0)
